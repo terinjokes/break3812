@@ -1,0 +1,17 @@
+#+TITLE: break3812
+
+break3812 is a breakout board for the Yamaha YM3812-F, better known as the OPL2, the FM synthesizer used on the original AdLib and Sound Blaster soundcards.
+
+** Development
+*** Git Configuration
+This project assumes you have configured the clean and smudge functionality of git on KiCad files. This will be set for this repository by entering =nix-shell=, or by manually running the configuration setup.
+
+#+BEGIN_SRC shell
+git config filter.kicad_project.clean "sed -E 's/^update=.*$/update=Date/'"
+git config filter.kicad_project.smudge cat
+git config filter.kicad_sch.clean "sed -E 's/#(PWR|FLG)[0-9]+/#\1?/'"
+git config filter.kicad_sch.smudge cat
+#+END_SRC
+
+** License
+The design of this hardware is licensed under CERN-OHL-W version 2.
